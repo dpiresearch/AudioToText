@@ -1,7 +1,7 @@
 from google.cloud import speech
 import subprocess
-import json
 
+# Record audio from a macOS microphone for a given duration and save to an mp3 file.
 def record_audio(duration, output_file):
     """
     Record audio from a macOS microphone for a given duration and save to an mp3 file.
@@ -32,6 +32,7 @@ if __name__ == "__main__":
     input()  # Wait for Enter key press
     print("Recording started...")
 
+    # Start recording and write to an mp3 file
     record_audio(duration, output_filename)
     print(f"Recording saved as {output_filename}")
 
@@ -40,6 +41,7 @@ if __name__ == "__main__":
 
     file_name = (output_filename)
 
+    # Read mp3 file and send to Google speech to text
     with open(file_name, "rb") as f:
         mp3_data = f.read()
 
@@ -52,18 +54,14 @@ if __name__ == "__main__":
     )
 
     response = client.recognize(config=config, audio=audio_file)
-    # print(response)
+    print(response)
 
+    # parse transcript
     for result in response.results:
         # First alternative is the most probable result
         alternative = result.alternatives[0]
         print(f"Transcript: {alternative.transcript}")
 
-#    parsed_data = json.loads(str(response))
-
-#    transcript = parsed_data["results"]["alternatives"]["transcript"]
-
-#    print(transcript)
-
-    # Next: Get response and take the next action based on what GPT-4 says
+    # Next: Get transcript, decorate with user context and action
+    # send to GPT-4 and take the next action ( open a doc, explain functionality, etc.. ).
 
