@@ -17,11 +17,15 @@ You have to set the api keys for Deepgram and OpenAI
  
  export OPEN_API_KEY="<OpenAI key>"
 
+ Deepgram: https://deepgram.com/
+ 
+ OpenAI: https://platform.openai.com/account/api-keys
+
 ## Execution
 
 % python StartStopAudioTomp3.py
 
-# TenSecsWriteTomp3.py
+# [Obsolete] TenSecsWriteTomp3.py
 
 Simple program that records ten seconds of audio through the microphone and sends the sound file to
 The Google Speech to Text API for transcription
