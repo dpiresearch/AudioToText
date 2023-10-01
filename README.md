@@ -5,7 +5,7 @@ This repo contains several programs created as we progress through the Audio->Te
 # StartStopAudioTomp3.py
 
 20231001 This version improves on the previous version by letting the user determine the duration of the audio instead of limiting him/her to 10 seconds
-The transcription is done by Whisper AI and that transcript is sent as a pronmpt to OpenAI
+The transcription is done by Deepgram and that transcript is sent as a pronmpt to OpenAI
 
 Demo video is here (https://drive.google.com/file/d/1m5Odb-14DNhLtG-BhYScusxQyu0chNyE/view?usp=sharing)
 
