@@ -1,5 +1,32 @@
 # AudioToText
 
+This repo contains several programs created as we progress through the Audio->Text-LLM use case
+
+# StartStopAudioTomp3.py
+
+20231001 This version improves on the previous version by letting the user determine the duration of the audio instead of limiting him/her to 10 seconds
+The transcription is done by Deepgram and that transcript is sent as a pronmpt to OpenAI
+
+Demo video is here (https://drive.google.com/file/d/1m5Odb-14DNhLtG-BhYScusxQyu0chNyE/view?usp=sharing)
+
+## Prereq
+
+You have to set the api keys for Deepgram and OpenAI
+
+ export DEEPGRAM_API_KEY="<Deepgram key>"
+ 
+ export OPEN_API_KEY="<OpenAI key>"
+
+ Deepgram: https://deepgram.com/
+ 
+ OpenAI: https://platform.openai.com/account/api-keys
+
+## Execution
+
+% python StartStopAudioTomp3.py
+
+# [Obsolete] TenSecsWriteTomp3.py
+
 Simple program that records ten seconds of audio through the microphone and sends the sound file to
 The Google Speech to Text API for transcription
 
