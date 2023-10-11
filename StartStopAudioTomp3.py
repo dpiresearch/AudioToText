@@ -7,6 +7,7 @@ import openai
 from deepgram import Deepgram
 import asyncio, json
 import aiohttp
+from elevenlabs import generate, play
 
 # Initialize your keys
 DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY")
@@ -89,6 +90,14 @@ def request_documentation_from_openai(transcription):
 
     return response['choices'][0]['message']['content']
 
+def text_to_speech(response):
+    audio = generate(
+        text=response,
+        voice="Adam",
+        model="eleven_multilingual_v2"
+    )
+
+    play(audio)
 
 if __name__ == "__main__":
     audio_data = record_audio_for_duration()
@@ -100,5 +109,6 @@ if __name__ == "__main__":
         print(transcription)
         response = request_documentation_from_openai(transcription)
         print(response)
+        text_to_speech(response)
     except Exception as e:
         print(f"An error occurred: {e}")
