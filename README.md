@@ -1,8 +1,10 @@
 # AudioToText
 
+Elevenlabs, Deepgram, OpenAi
+
 This repo contains several programs created as we progress through the Audio->Text-LLM use case.  Most recent code uses Deepgram and Elevenlabs
 
-# StartStopAudioTomp3.py
+## StartStopAudioTomp3.py
 
 20231001 This version improves on the previous version by letting the user determine the duration of the audio instead of limiting him/her to 10 seconds
 The transcription is done by Deepgram and that transcript is sent as a pronmpt to OpenAI
