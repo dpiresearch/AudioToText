@@ -1,6 +1,6 @@
 # AudioToText
 
-This repo contains several programs created as we progress through the Audio->Text-LLM use case
+This repo contains several programs created as we progress through the Audio->Text-LLM use case.  Most recent code uses Deepgram and Elevenlabs
 
 # StartStopAudioTomp3.py
 
